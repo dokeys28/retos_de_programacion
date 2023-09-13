@@ -4,7 +4,7 @@
 #  *   - Por ejemplo "m_ur_d_v", y el número de intentos que le quedan
 import random
 
-LISTA_DE_PALABRAS = ['acidosismetabolica','trompetaensib','lapizlazuli','arboledadetoronjas','carritorojodecarrera']
+LISTA_DE_PALABRAS = ['acidosis metabolica','papotico','lapiz lazuli','crucigrama','pentavalente']
 
 def saltos(palabra):
     print(f'\n{palabra}\n')
@@ -16,7 +16,7 @@ class Palabra:
         self.palabra_oculta = self.ocultar_palabra()
         
     def elegir_palabra(self):
-        palabra_random = random.choice(self.LISTA_DE_PALABRAS)
+        palabra_random = random.choice(LISTA_DE_PALABRAS)
         return palabra_random
             
     def porcentar_palabra(self):
@@ -31,7 +31,7 @@ class Palabra:
         self.palabra_oculta = list(self.palabra_random)
         for _ in range(self.porcentar_palabra()):
             numero_random = self.obtener_numero_random()
-            if self.palabra_oculta[numero_random] != '_':
+            if self.palabra_oculta[numero_random] != '_' and self.palabra_oculta[numero_random]!= ' ':
                 self.palabra_oculta[numero_random] = '_'
         return "".join(self.palabra_oculta)
     
