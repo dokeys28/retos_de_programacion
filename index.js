@@ -7,6 +7,7 @@ const USUARIO = document.querySelector('.input');
 
 let palabra_oculta;
 let palabra_random;
+BOTON.disabled = true;
 
 function inicio(){
     let numero_random = Math.round(Math.random());
@@ -15,15 +16,19 @@ function inicio(){
     PALABRA.innerHTML = palabra_oculta;
     INICIAR.disabled = true;
     USUARIO.value = "";
+    BOTON.disabled = false;
 };
 
 function verificar(){
     if (USUARIO.value == palabra_random){
         PALABRA.innerHTML = palabra_random;
-        INICIAR.disabled = false
+        INICIAR.disabled = false;
+        BOTON.disabled = true;
+        
     }else{
         PALABRA.innerHTML = 'klk mamaguevo';
-        INICIAR.disabled = false
+        INICIAR.disabled = false;
+        BOTON.disabled = true;
     };
 };
 
