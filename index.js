@@ -13,8 +13,8 @@ function inicio(){
     palabra_random = LISTADEPALABRAS[numero_random];
     palabra_oculta = OCU[numero_random];
     PALABRA.innerHTML = palabra_oculta;
-    INICIAR.disabled = true
-
+    INICIAR.disabled = true;
+    USUARIO.value = "";
 };
 
 function verificar(){
