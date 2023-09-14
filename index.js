@@ -9,6 +9,7 @@ const BOTON_API = document.querySelector('.apib');
 
 let palabra_oculta;
 let palabra_random;
+BOTON.disabled = true;
 
 
 function inicio(){
@@ -16,17 +17,21 @@ function inicio(){
     palabra_random = LISTADEPALABRAS[numero_random];
     palabra_oculta = OCU[numero_random];
     PALABRA.innerHTML = palabra_oculta;
-    INICIAR.disabled = true
-
+    INICIAR.disabled = true;
+    USUARIO.value = "";
+    BOTON.disabled = false;
 };
 
 function verificar(){
     if (USUARIO.value == palabra_random){
         PALABRA.innerHTML = palabra_random;
-        INICIAR.disabled = false
+        INICIAR.disabled = false;
+        BOTON.disabled = true;
+        
     }else{
         PALABRA.innerHTML = 'klk mamaguevo';
-        INICIAR.disabled = false
+        INICIAR.disabled = false;
+        BOTON.disabled = true;
     };
 };
 
