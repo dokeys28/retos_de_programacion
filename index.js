@@ -10,7 +10,7 @@ const BOTON_API = document.querySelector('.apib');
 let palabra_oculta;
 let palabra_random;
 BOTON.disabled = true;
-
+const api_key = 'b0bC9dab48z4_ghLJNoARpQwqZacdrkWYpco9RDiZ3g8g';
 
 function inicio(){
     let numero_random = Math.round(Math.random());
@@ -36,7 +36,7 @@ function verificar(){
 };
 
 async function buscar_api(){
-  await fetch('https://miapi-1-a9187628.deta.app/usuario/Pedro,86',{method: 'POST'})
+  await fetch('https://miapi-1-a9187628.deta.app/usuarios/',{headers:{'Authorization': `APIKEY ${api_key}`},method: 'GET'})
   .then(response => response.json())
   .then(data=>{
     PALABRA_API.innerHTML = data
