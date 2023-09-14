@@ -4,9 +4,12 @@ const INICIAR = document.querySelector('.iniciar');
 const BOTON = document.querySelector('.enviar');
 const PALABRA = document.querySelector('.palabra');
 const USUARIO = document.querySelector('.input');
+const PALABRA_API = document.querySelector('.api');
+const BOTON_API = document.querySelector('.apib');
 
 let palabra_oculta;
 let palabra_random;
+
 
 function inicio(){
     let numero_random = Math.round(Math.random());
@@ -27,6 +30,14 @@ function verificar(){
     };
 };
 
+async function buscar_api(){
+  await fetch('https://miapi-1-a9187628.deta.app/usuario/Pedro,86',{method: 'POST'})
+  .then(response => response.json())
+  .then(data=>{
+    PALABRA_API.innerHTML = data
+  });
+}
+
 
 INICIAR.addEventListener('click',()=>{
     inicio();
@@ -36,3 +47,8 @@ BOTON.addEventListener('click',()=>{
 
     verificar();
 });
+
+BOTON_API.addEventListener('click',()=>{
+    buscar_api()
+    console.log('klk')
+})
