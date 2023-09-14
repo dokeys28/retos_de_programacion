@@ -10,7 +10,9 @@ const BOTON_API = document.querySelector('.apib');
 let palabra_oculta;
 let palabra_random;
 BOTON.disabled = true;
-const api_key = 'b0bC9dab48z4_ghLJNoARpQwqZacdrkWYpco9RDiZ3g8g';
+
+   
+
 
 function inicio(){
     let numero_random = Math.round(Math.random());
@@ -35,14 +37,22 @@ function verificar(){
     };
 };
 
-async function buscar_api(){
-  await fetch('https://miapi-1-a9187628.deta.app/usuarios/',{headers:{'Authorization': `APIKEY ${api_key}`},method: 'GET'})
-  .then(response => response.json())
-  .then(data=>{
-    PALABRA_API.innerHTML = data
-  });
+async function consumir_api(){
+    
+    let headersList = {
+        "Accept": "*/*",
+        "User-Agent": "Thunder Client (https://www.thunderclient.com)"
+       }
+       
+       let response = await fetch("https://miapi-1-a9187628.deta.app/usuarios", { 
+         method: "GET",
+         headers: headersList
+       });
+       
+       let data = await response.text();
+       console.log(data);
+       
 }
-
 
 INICIAR.addEventListener('click',()=>{
     inicio();
@@ -53,7 +63,5 @@ BOTON.addEventListener('click',()=>{
     verificar();
 });
 
-BOTON_API.addEventListener('click',()=>{
-    buscar_api()
-    console.log('klk')
-})
+BOTON_API.addEventListener('click',consumir_api)
+
