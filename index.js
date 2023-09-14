@@ -46,7 +46,8 @@ async function consumir_api(){
        
        let response = await fetch("https://miapi-1-a9187628.deta.app/usuarios", { 
          method: "GET",
-         headers: headersList
+         headers: headersList,
+         mode: 'no-cors'
        });
        
        let data = await response.text();
