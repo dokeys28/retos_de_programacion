@@ -26,8 +26,7 @@ async def get_usuario(nombre):
         if usuario.nombre == nombre:
             return usuario
 
-@app.post('/usuario/{nombre},{edad}')
-async def post_usuario(nombre, edad):
-    usuario = Usuario(nombre= nombre, edad= edad)
+@app.post('/usuario')
+async def post_usuario(usuario: Usuario):
     lista_usuarios.append(usuario)
     return usuario
