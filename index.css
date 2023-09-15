@@ -7,6 +7,8 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 h1{
@@ -15,14 +17,14 @@ h1{
 }
 
 .input{
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 12px;
     margin: 10px 0px;
 }
 .boton{
     margin: 10px 0px;
     padding: 12px;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .imagen{
