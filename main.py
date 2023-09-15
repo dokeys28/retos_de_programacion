@@ -1,7 +1,15 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from router import dias
+from fastapi.staticfiles import StaticFiles
+
 app = FastAPI()
 
+#rutas
+app.include_router(dias.router)
+
+#autorizar uso de carpetas y archivos estaticos
+app.mount('/assets', StaticFiles(directory="assets"), name= 'assets')
 
 class Usuario(BaseModel):
     nombre: str
