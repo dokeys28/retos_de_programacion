@@ -4,7 +4,31 @@
 }
 
 .contenedor{
-    margin: 0% 20%;
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
 
+h1{
+    text-align: center;
+    margin: 10px
+}
+
+.input{
+    font-size: 2rem;
+    padding: 12px;
+    margin: 10px 0px;
+}
+.boton{
+    margin: 10px 0px;
+    padding: 12px;
+    font-size: 2rem;
+}
+
+.imagen{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+
+}
